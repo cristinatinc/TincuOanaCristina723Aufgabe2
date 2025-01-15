@@ -190,6 +190,10 @@ public class ConsoleView {
         controller.deleteSpieler(SpielerToDelete);
     }
 
+    /**
+     *
+     * @param scanner
+     */
     private void addVerein(Scanner scanner){
         System.out.println("Enter ID");
         Integer id = Integer.parseInt(scanner.nextLine());
@@ -202,11 +206,18 @@ public class ConsoleView {
         controller.addVerein(verein);
     }
 
+    /**
+     *
+     */
     private void readVereine(){
         List<Verein> clients = controller.getVereins();
         clients.forEach(System.out::println);
     }
 
+    /**
+     *
+     * @param scanner
+     */
     private void updateVereine(Scanner scanner){
         controller.showVereins();
         System.out.println("Id of the Verein to update:");
@@ -234,6 +245,10 @@ public class ConsoleView {
         System.out.println("Successfull update!");
     }
 
+    /**
+     *
+     * @param scanner
+     */
     private void deleteVerein(Scanner scanner){
         controller.showVereins();
         System.out.println("Id of the Verein to delete:");
@@ -243,6 +258,10 @@ public class ConsoleView {
         controller.deleteVerein(clientToDelete);
     }
 
+    /**
+     *
+     * @param scanner
+     */
     private void addSpielerToVerein(Scanner scanner){
         controller.showVereins();
         System.out.println("Enter id of the Verein");
@@ -256,13 +275,20 @@ public class ConsoleView {
         controller.addSpielerToVerein(SpielerID, VereinID);
     }
 
-
+    /**
+     *
+     * @param scanner
+     */
     private void filterMethod(Scanner scanner){
         System.out.println("Enter stadt to filter by");
         String season = scanner.nextLine();
         controller.vereinNachStadt(season);
     }
 
+    /**
+     *
+     * @param scanner
+     */
     private void filter2(Scanner scanner){
         System.out.println("Enter verein to filter by");
         String season = scanner.nextLine();
