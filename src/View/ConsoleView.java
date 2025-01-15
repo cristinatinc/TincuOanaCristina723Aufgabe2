@@ -101,7 +101,7 @@ public class ConsoleView {
                     break;
 
                 case "11":
-
+                    filter2(scanner);
                     break;
 
                 case "12":
@@ -261,5 +261,11 @@ public class ConsoleView {
         System.out.println("Enter stadt to filter by");
         String season = scanner.nextLine();
         controller.vereinNachStadt(season);
+    }
+
+    private void filter2(Scanner scanner){
+        System.out.println("Enter verein to filter by");
+        String season = scanner.nextLine();
+        controller.spielerImVErein(season);
     }
 }

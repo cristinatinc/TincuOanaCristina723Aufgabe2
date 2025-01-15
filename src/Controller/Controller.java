@@ -180,5 +180,10 @@ public class Controller {
                 .forEach(System.out::println);
     }
 
+    public void spielerImVErein(String verein){
+        vereinRepo.getAll().stream()
+                .filter(verein1 -> verein1.getName().equals(verein))
+                .forEach(verein1 -> System.out.println(verein1.getSpieler()));
+    }
 }
 
