@@ -3,6 +3,8 @@ package View;
 import Controller.Controller;
 import Model.Spieler;
 import Model.Verein;
+import Repository.IRepository;
+import Repository.InMemoryRepository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,10 +37,9 @@ public class ConsoleView {
             System.out.println("8. Delete Verein");
             System.out.println("9. Add Spieler to Verein");
 
-            System.out.println("10. ");
+            System.out.println("10. Filer nach Verein ");
             System.out.println("11. ");
             System.out.println("12. ");
-            System.out.println("13. ");
             System.out.println("0. Exit ");
             System.out.println("Please enter your choice: ");
             userChoice = scanner.nextLine();
@@ -257,6 +258,8 @@ public class ConsoleView {
 
 
     private void filterMethod(Scanner scanner){
-        // ...
+        System.out.println("Enter stadt to filter by");
+        String season = scanner.nextLine();
+        controller.vereinNachStadt(season);
     }
 }

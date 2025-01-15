@@ -31,7 +31,7 @@ public class Controller {
      */
     public void initializeRepository() {
         Spieler p1 = new Spieler(1, "Ana", 24, "p1", 100);
-        Spieler p2 = new Spieler(2, "Bogdan", 30, "p1", 120);
+        Spieler p2 = new Spieler(2, "Bogdan", 30, "p4", 120);
         Spieler p3 = new Spieler(3, "ALexia", 32, "p2", 30);
         Spieler p4 = new Spieler(4, "Rares", 18, "p3", 60);
 
@@ -40,27 +40,27 @@ public class Controller {
         spielerRepo.create(p3);
         spielerRepo.create(p4);
 
-        Verein Verein1 = new Verein(1, "A", "Cluj");
-        Verein Verein2 = new Verein(2, "B","Sibiu");
-        Verein Verein3 = new Verein(3, "C", "Floresti");
+        Verein verein1 = new Verein(1, "A", "Cluj");
+        Verein verein2 = new Verein(2, "B","Sibiu");
+        Verein verein3 = new Verein(3, "C", "Floresti");
 
-        vereinRepo.create(Verein1);
-        vereinRepo.create(Verein2);
-        vereinRepo.create(Verein3);
+        vereinRepo.create(verein1);
+        vereinRepo.create(verein2);
+        vereinRepo.create(verein3);
 
-//        addSpielerToVerein(1, 2);
-//        addSpielerToVerein(1, 1);
-//        addSpielerToVerein(4, 1);
-//        addSpielerToVerein(2, 3);
+        addSpielerToVerein(1, 2);
+        addSpielerToVerein(1, 1);
+        addSpielerToVerein(4, 1);
+        addSpielerToVerein(2, 3);
     }
 
     /**
      * Adds a Spieler entity to the repository.
      *
-     * @param Spieler the Spieler to add
+     * @param spieler the Spieler to add
      */
-    public void addSpieler(Spieler Spieler) {
-        spielerRepo.create(Spieler);
+    public void addSpieler(Spieler spieler) {
+        spielerRepo.create(spieler);
     }
 
     /**
@@ -139,8 +139,8 @@ public class Controller {
      * Displays all Vereins in the repository.
      */
     public void showVereins() {
-        List<Verein> Vereins = vereinRepo.getAll();
-        Vereins.forEach(System.out::println);
+        List<Verein> vereins = vereinRepo.getAll();
+        vereins.forEach(System.out::println);
     }
 
     /**
@@ -172,6 +172,12 @@ public class Controller {
         Verein Verein = vereinRepo.read(VereinID);
         Spieler Spieler = spielerRepo.read(SpielerId);
         Verein.getSpieler().add(Spieler);
+    }
+
+    public void vereinNachStadt(String stadt){
+        vereinRepo.getAll().stream()
+                .filter(verein -> verein.getStadt().equals(stadt))
+                .forEach(System.out::println);
     }
 
 }

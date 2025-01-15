@@ -60,6 +60,6 @@ public class Spieler implements HasID{
 
     @Override
     public Integer getId() {
-        return 0;
+        return id;
     }
 }

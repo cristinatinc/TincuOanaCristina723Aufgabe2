@@ -4,10 +4,6 @@ import Repository.IRepository;
 import Repository.InMemoryRepository;
 import Controller.Controller;
 import View.ConsoleView;
-//
-//import Model.Spieler;
-//import Repository.IRepository;
-//import Repository.InMemoryRepository;
 
 import java.util.Scanner;
 
